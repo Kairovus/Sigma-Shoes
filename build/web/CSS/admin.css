@@ -1,0 +1,604 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    -white:#EEEE;
+    -grey: #686D76;
+    -dark-grey: #373a40;
+    -orange: #DC5F00;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.logoimg{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+
+.sidebar{
+    position: absolute;
+    top:0px;
+    left:0;
+    height: 110vh;
+    width: 80px;
+    background-color: #373a40;
+    padding: .4rem .8rem;
+    transition: all .5s ease;
+}
+
+.sidebar.active~.main-content{
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.sidebar.active{
+    width: 250px;
+}
+
+
+.sidebar #btn{
+    position: absolute;
+    color: #EEEE;
+    top: 0.4rem;
+    left: 50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn{
+    left: 90%;
+}
+
+.sidebar .top .logo{
+    color: #EEEE;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+}
+
+.sidebar.active .top .logo{
+    opacity: 1;
+}
+
+.top .logo i{
+    font-size: 2rem;
+    margin-right: 5px;
+    justify-content: space-between;
+}
+
+.logo{
+    gap: 10px ;
+}
+
+
+.sidebar p{
+    opacity: 0;
+}
+
+.sidebar.active p{
+    opacity: 1;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    font-size: larger;
+    font-weight: 550;
+    color: #EEEE;
+    display: flex;
+    align-items: center;
+    text-decoration:none ;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover{
+    background-color: #EEEE;
+    color: #373a40;
+}
+
+.sidebar ul li a i{
+    min-width:50px ;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.sidebar .nav-item{
+    opacity: 0;
+}
+
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: .6rem;
+    padding: .4rem .6rem;
+    box-shadow: 0 0 .5rem 0.2rem rgba(0, 0, 0, 0.2);
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+}
+
+.sidebar.active ul li .tooltip{
+    display: none;
+}
+.sidebar ul li:hover .tooltip{
+    opacity: 1;
+}
+
+.main-content{
+    position: relative;
+    background-color: white;
+    min-height: 110vh;
+    top: 0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+
+}
+
+.container{
+    justify-content: space-between;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    background-color: #686D76;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    color:white;
+}
+
+.user-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.addbtn{
+    background-color: #DC5F00;
+    padding: 1rem;
+    width: max-content;
+    text-decoration: none;
+    border-radius: 1rem;
+    font-weight: 600;
+    color:#EEEE;
+    margin-bottom: 10px;
+    margin-left: 10%;
+}
+
+.producttable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #686D76;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.productsrow{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    align-items: center;
+}
+
+.productname, .categoryname, .descriptionname, .datename, .customername, .productsname, .pricename, .adminname, .stockname, .sizename{
+    font-weight: 600;
+    color: #EEEE;
+}
+
+.edit{
+    background-color:#EEEE;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-right: 20px;
+}
+
+.edittext{
+    color: #373a40;
+    text-decoration: none;
+}
+
+.delete{
+    background-color: rgb(212, 82, 82);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-right: 80px;
+}
+
+.deletetext{
+    color:#EEEE;
+    text-decoration: none;
+}
+
+.productFormtitle{
+    margin-left: 10%;
+    color: #DC5F00;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.product-form{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 .5rem 0.2rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+#name, #category, #color, #sex, #description, #price, #categories, #brand, #size, #email, #username,  #password, #stock{
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    font-size: larger;
+    border-radius: .5rem;
+}
+
+.submit{
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    background-color:#DC5F00;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: larger;
+    color: #EEEE;
+}
+
+.categoriesform{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    background-color: #686D76;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.categoriesformtitle{
+    padding: .3rem;
+    color: #EEEE;
+}
+
+.categories-form{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.categoriestable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: #686D76;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.categoriestabletitle{
+    display: flex;
+    gap: 35.5%;
+    color:#EEEE;
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+}
+
+.categoryrow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.login{
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    background-color: #686D76;
+    border-radius: 1rem;
+    padding: 1rem ;
+}
+
+.logintitle{
+    justify-content: center;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom : 5% ;
+}
+
+.loginpic{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 1rem;
+    margin-bottom: 5%;
+}
+
+.loginform{
+    width: 70%;
+    margin-bottom: 5%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#loginemail, #loginpassword{
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 5%;
+    height: 30px;
+}
+
+.loginbtn{
+    border-radius: 1rem;
+    width: 50%;
+    height: 40px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #DC5F00;
+    font-weight: 600;
+    font-size: x-large;
+    color: #EEEE;
+}
+
+.adminform{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    background-color: #686D76;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.adminformtitle{
+    padding: .3rem;
+    color: #EEEE;
+}
+
+.admin-form{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.admintable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: #686D76;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.admintabletitle{
+    display: flex;
+    gap: 30%;
+    color:#EEEE;
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+}
+
+.adminrow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.ordertable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: #686D76;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.ordertabletitle{
+    display: flex;
+    justify-content: space-between;
+    color:#EEEE;
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+    width:90%;
+
+}
+
+.orderrow{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.datename, .pricename, .customername, .productsname{
+    width:20%
+}
+
+.order-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+}
+
+.order-stats{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 10px ;
+    background-color: #686D76;
+    padding: .5rem;
+    border-radius: 1rem;
+    color: #EEEE;
+    text-align: center;
+}
+
+.ordernum{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+.revenue-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.revenue-stats{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 10px ;
+    background-color: #686D76;
+    padding: .5rem;
+    border-radius: 1rem;
+    color: #EEEE;
+    text-align: center;
+}
+
+.revenuenum{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+.stockform{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: max-content;
+    background-color: #686D76;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.stockformtitle{
+    padding: .3rem;
+    color: #EEEE;
+}
+
+.stock-form{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.stocktable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: #686D76;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.stocktabletitle{
+    display: flex;
+    justify-content: space-between;
+    color:#EEEE;
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+    width: 67%;
+}
+
+.stockrow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.accordion{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    background-color: #686D76;
+    padding: .5rem; 
+    border-radius: 1rem;
+    justify-content: space-between;
+}
+
+.active, .accordion:hover {
+  background-color: #373a40;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+

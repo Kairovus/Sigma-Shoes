@@ -1,0 +1,104 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    background-image: url("img/formbg.png");
+    background-size: contain;
+    background-color: #686D76;
+}
+
+main {
+    margin: 3em auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    width: 40%;
+}
+
+main h2 {
+    color: #DC5F00;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    color: #555;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #3F72AF;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.errorms {
+    max-width: 100%;
+    color: #FF3131;
+    font-style: italic;
+    font-size: 0.8rem;
+    margin: 0.5em 0;
+    height: 1ch;
+}
+
+.error {
+    border: 2px solid #FF3131;
+}
+
+.success {
+    border: 2px solid #31FFFF;
+}
+
+.sign-button {
+  margin: 10px 10px 10px 0;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.sign-button:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.sign-button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+    }
+}
